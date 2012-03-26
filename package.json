@@ -1,0 +1,12 @@
+{
+    "name": "npid",
+    "description": "Manage a pid file.",
+    "version": "0.1.0",
+    "author": "Mathieu Turcotte <turcotte.mat@gmail.com>",
+    "keywords": ["util", "pid"],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MathieuTurcotte/node-pid.git"
+    },
+    "main": "pid.js"
+}
