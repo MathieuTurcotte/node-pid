@@ -1,6 +1,6 @@
 # PID file for Node.js
 
-Manage a PID file in Node.js.
+Manage a PID file in Node.js. [![Build Status](https://secure.travis-ci.org/MathieuTurcotte/node-pid.png?branch=master)](http://travis-ci.org/MathieuTurcotte/node-pid)
 
 ## Installation
 
