@@ -6,7 +6,7 @@
 var fs = require('fs'),
     path = require('path');
 
-var npid = require('../lib/pid');
+var npid = require('../index');
 
 var SANDBOX_PATH = path.join(__dirname, 'sandbox'),
     NEW_PID_FILE = path.join(SANDBOX_PATH, 'pid0'),
