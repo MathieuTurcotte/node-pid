@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var pid = require('./pid');
+var pid = require('../lib/pid');
 
 pid.create('./example.pid');
 
