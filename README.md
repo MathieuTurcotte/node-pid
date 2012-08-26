@@ -8,7 +8,7 @@ Manage a pid file in Node.js. [![Build Status](https://secure.travis-ci.org/Math
 npm install npid
 ```
 
-## Unit tests
+## Tests
 
 ```
 npm test
