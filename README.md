@@ -1,6 +1,6 @@
-# A pid file manager for Node.js
+# A pid file manager for Node.js [![Build Status](https://secure.travis-ci.org/MathieuTurcotte/node-pid.png?branch=master)](http://travis-ci.org/MathieuTurcotte/node-pid)
 
-Manage a pid file in Node.js. [![Build Status](https://secure.travis-ci.org/MathieuTurcotte/node-pid.png?branch=master)](http://travis-ci.org/MathieuTurcotte/node-pid)
+Manage a pid file in Node.js.
 
 ## Installation
 
