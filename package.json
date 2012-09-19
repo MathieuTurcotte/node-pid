@@ -1,7 +1,7 @@
 {
     "name": "npid",
     "description": "Manage a pid file.",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "author": "Mathieu Turcotte <turcotte.mat@gmail.com>",
     "keywords": ["util", "pid"],
     "repository": {
