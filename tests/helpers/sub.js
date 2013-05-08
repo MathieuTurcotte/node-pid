@@ -5,8 +5,8 @@
 
 var npid = require('../../index');
 
-var pid = process.argv[2],
-    iid = setInterval(function() {}, 5000);
+var pid = process.argv[2];
+setInterval(function() {}, 5000);
 
 npid.create(pid);
 

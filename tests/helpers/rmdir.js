@@ -3,8 +3,8 @@
  * Licensed under the MIT license.
  */
 
-var fs = require('fs'),
-    path = require('path');
+var fs = require('fs');
+var path = require('path');
 
 module.exports = function rmdirSync(p) {
     var stat;
