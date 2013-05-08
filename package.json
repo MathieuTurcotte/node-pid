@@ -9,8 +9,8 @@
         "url": "https://github.com/MathieuTurcotte/node-pid.git"
     },
     "devDependencies": {
-        "nodeunit": "0.7",
-        "jshint": "0.9"
+        "nodeunit": "0.8",
+        "jshint": "1.1"
     },
     "scripts": {
         "pretest": "node_modules/jshint/bin/hint index.js lib/ tests/ examples/",
