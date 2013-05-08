@@ -13,8 +13,8 @@
         "jshint": "1.1"
     },
     "scripts": {
-        "pretest": "node_modules/jshint/bin/hint index.js lib/ tests/ examples/",
-        "test": "node_modules/nodeunit/bin/nodeunit tests/"
+        "pretest": "node_modules/.bin/jshint index.js lib/ tests/ examples/",
+        "test": "node_modules/.bin/nodeunit tests/"
     },
     "engines": {
         "node": ">= 0.8"

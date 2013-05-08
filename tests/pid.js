@@ -59,9 +59,9 @@ exports["npid"] = {
     "existing pid file should be overwritten when force is true": function(test) {
         var original = fs.readFileSync(EXISTING_PID_FILE, 'utf8');
         npid.create(EXISTING_PID_FILE, true);
-        var final = fs.readFileSync(EXISTING_PID_FILE, 'utf8');
-        test.notEqual(original, final);
-        test.equal(final, process.pid);
+        var finalContent = fs.readFileSync(EXISTING_PID_FILE, 'utf8');
+        test.notEqual(original, finalContent);
+        test.equal(finalContent, process.pid);
         test.done();
     },
 
