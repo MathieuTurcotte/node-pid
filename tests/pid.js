@@ -3,16 +3,16 @@
  * Licensed under the MIT license.
  */
 
-var fs = require('fs'),
-    path = require('path'),
-    cp = require('child_process');
+var cp = require('child_process');
+var fs = require('fs');
+var path = require('path');
 
-var npid = require('../index'),
-    rmdirSync = require('./helpers/rmdir');
+var npid = require('../index');
+var rmdirSync = require('./helpers/rmdir');
 
-var SANDBOX = path.join(__dirname, 'sandbox'),
-    NEW_PID_FILE = path.join(SANDBOX, 'pid0'),
-    EXISTING_PID_FILE = path.join(SANDBOX, 'pid1');
+var SANDBOX = path.join(__dirname, 'sandbox');
+var NEW_PID_FILE = path.join(SANDBOX, 'pid0');
+var EXISTING_PID_FILE = path.join(SANDBOX, 'pid1');
 
 var CHIlD_HELPER = path.join(__dirname, 'helpers/sub.js');
 
