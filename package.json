@@ -10,7 +10,7 @@
     },
     "devDependencies": {
         "nodeunit": "0.8",
-        "jshint": "1.1"
+        "jshint": "2.1"
     },
     "scripts": {
         "pretest": "node_modules/.bin/jshint index.js lib/ tests/ examples/",
