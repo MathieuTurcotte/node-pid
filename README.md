@@ -1,16 +1,18 @@
-# A pid file manager for Node.js [![Build Status](https://secure.travis-ci.org/MathieuTurcotte/node-pid.png?branch=master)](http://travis-ci.org/MathieuTurcotte/node-pid)
+# A pid file manager for Node.js
+[![Build Status](https://secure.travis-ci.org/MathieuTurcotte/node-pid.png?branch=master)](http://travis-ci.org/MathieuTurcotte/node-pid)
+[![NPM version](https://badge.fury.io/js/npid.png)](http://badge.fury.io/js/npid)
 
 Manage a pid file in Node.js.
 
 ## Installation
 
-```
+``` sh
 npm install npid
 ```
 
-## Tests
+## Unit tests
 
-```
+``` sh
 npm test
 ```
 
