@@ -7,13 +7,13 @@ Manage a pid file in Node.js.
 ## Installation
 
 ``` sh
-npm install npid
+$ npm install npid
 ```
 
 ## Unit tests
 
 ``` sh
-npm test
+$ npm test
 ```
 
 ## Usage
