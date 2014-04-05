@@ -26,7 +26,7 @@ exit. If a pid file already exists, an exception will be thrown.
 var npid = require('npid');
 
 try {
-    pid = npid.create('/var/run/chubaka.pid');
+    var pid = npid.create('/var/run/chubaka.pid');
     pid.removeOnExit();
 } catch (err) {
     console.log(err);

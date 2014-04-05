@@ -1,7 +1,13 @@
 #!/usr/bin/env node
 
-var pid = require('../lib/pid');
+var npid = require('../index');
 
-pid.create('./exception.pid');
+var pid = npid.create('./exception.pid');
+pid.removeOnExit();
 
-throw new Error('Boum!');
+process.on('uncaughtException', function(err) {
+    console.log('Caught exception: ' + err);
+    process.exit(1);
+});
+
+throw Error('Boum!');
