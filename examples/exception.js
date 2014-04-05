@@ -10,4 +10,4 @@ process.on('uncaughtException', function(err) {
     process.exit(1);
 });
 
-throw Error('Boum!');
+throw new Error('Boum!');
