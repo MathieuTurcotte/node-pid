@@ -5,10 +5,11 @@
 
 var npid = require('../../index');
 
-var pid = process.argv[2];
+var path = process.argv[2];
 setInterval(function() {}, 5000);
 
-npid.create(pid);
+var pid = npid.create(path);
+pid.removeOnExit();
 
 process.on('message', function(m) {
     process.exit(0);

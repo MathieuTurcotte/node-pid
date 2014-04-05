@@ -65,40 +65,20 @@ exports["npid"] = {
         test.done();
     },
 
+    "calling remove on the handle should remove the pid file": function(test) {
+        var pid = npid.create(NEW_PID_FILE);
+        test.ok(fs.existsSync(NEW_PID_FILE));
+        pid.remove();
+        test.ok(!fs.existsSync(NEW_PID_FILE));
+        test.done();
+    },
+
     "the pidfile should be deleted on normal exit": function(test) {
         var child = cp.fork(__dirname + '/helpers/sub.js', [NEW_PID_FILE]);
 
         child.on('message', function(m) {
             test.ok(fs.existsSync(NEW_PID_FILE));
             child.send('stop');
-        });
-
-        child.on('exit', function(code, signal) {
-            test.ok(!fs.existsSync(NEW_PID_FILE));
-            test.done();
-        });
-    },
-
-    "the pidfile should be deleted on SIGINT exit": function(test) {
-        var child = cp.fork(CHIlD_HELPER, [NEW_PID_FILE]);
-
-        child.on('message', function(m) {
-            test.ok(fs.existsSync(NEW_PID_FILE));
-            child.kill('SIGINT');
-        });
-
-        child.on('exit', function(code, signal) {
-            test.ok(!fs.existsSync(NEW_PID_FILE));
-            test.done();
-        });
-    },
-
-    "the pidfile should be deleted on SIGTERM exit": function(test) {
-        var child = cp.fork(CHIlD_HELPER, [NEW_PID_FILE]);
-
-        child.on('message', function(m) {
-            test.ok(fs.existsSync(NEW_PID_FILE));
-            child.kill('SIGTERM');
         });
 
         child.on('exit', function(code, signal) {

@@ -26,7 +26,8 @@ exit. If a pid file already exists, an exception will be thrown.
 var npid = require('npid');
 
 try {
-    npid.create('/var/run/chubaka.pid');
+    pid = npid.create('/var/run/chubaka.pid');
+    pid.removeOnExit();
 } catch (err) {
     console.log(err);
     process.exit(1);
@@ -34,17 +35,39 @@ try {
 ```
 
 Note that the pid file won't be deleted when a program stops due to an uncaught
-exception. This can be avoided by specifying a handler for uncaught exceptions
-that calls `process.exit`.
+exception or a signal. This can be avoided by specifying a handler for uncaught
+exceptions that calls `process.exit` or remove the pid file explicitly.
 
 ## API
 
-### npid.create(path, [force])
+### Static functions
+
+#### npid.create(path, [force])
 
 - path: pid file path
 - force: overwrite any existing pid file
 
-Synchronously create a pid file that is going to be deleted on process exit.
+Synchronously create a pid file and returns a handle to it.
+
+#### npid.remove(path)
+
+- path: pid file path
+
+Synchronously removes a pid file. Does not throw.
+
+### Class Pid
+
+Represents a handle to a pid file and expose an API to remove it either
+automatically at process exit or manually when the process exits due to
+an uncaught exception or a signal.
+
+#### pid.remove()
+
+Removes the pid file. Does not throw.
+
+#### pid.removeOnExit()
+
+Removes the pid file on normal process exit.
 
 ## License
 
