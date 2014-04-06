@@ -34,15 +34,16 @@ try {
 }
 ```
 
-Note that the pid file won't be deleted when a program stops due to an uncaught
-exception or a signal. This can be avoided by specifying a handler for uncaught
-exceptions that calls `process.exit` or remove the pid file explicitly.
+Note that the pid file won't be removed when a program stops due to an uncaught
+exception or a unhandled signal. This can be avoided by specifying handlers for
+uncaught exceptions and signals that call `process.exit` or remove the pid file
+explicitly before exiting.
 
 ## API
 
 ### Static functions
 
-#### npid.create(path, [force])
+#### npid.create(path, [force]): npid.Pid
 
 - path: pid file path
 - force: overwrite any existing pid file
@@ -53,7 +54,8 @@ Synchronously create a pid file and returns a handle to it.
 
 - path: pid file path
 
-Synchronously removes a pid file. Does not throw.
+Synchronously removes a pid file. Does not throw if the pid file is missing or
+if the removal fails.
 
 ### Class Pid
 
@@ -63,7 +65,8 @@ an uncaught exception or a signal.
 
 #### pid.remove()
 
-Removes the pid file. Does not throw.
+Synchronously removes the pid file. Does not throw if the pid file is missing
+or if the removal fails.
 
 #### pid.removeOnExit()
 

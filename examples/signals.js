@@ -6,9 +6,7 @@ var pid = npid.create('./example.pid');
 pid.removeOnExit();
 
 function exit() {
-    process.nextTick(function() {
-        process.exit(0);
-    });
+    process.exit(0);
 }
 
 process.on('SIGINT', exit);
