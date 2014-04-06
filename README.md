@@ -48,14 +48,16 @@ explicitly before exiting.
 - path: pid file path
 - force: overwrite any existing pid file
 
-Synchronously create a pid file and returns a handle to it.
+Synchronously creates a pid file and returns a handle to it. Will throw an
+exception if a pid file already exists and the `force` parameter is false.
 
-#### npid.remove(path)
+#### npid.remove(path): bool
 
 - path: pid file path
 
 Synchronously removes a pid file. Does not throw if the pid file is missing or
-if the removal fails.
+if the removal fails. Returns a boolean indicating whether the pid file removal
+succeeded.
 
 ### Class Pid
 
@@ -63,10 +65,11 @@ Represents a handle to a pid file and expose an API to remove it either
 automatically at process exit or manually when the process exits due to
 an uncaught exception or a signal.
 
-#### pid.remove()
+#### pid.remove(): bool
 
 Synchronously removes the pid file. Does not throw if the pid file is missing
-or if the removal fails.
+or if the removal fails. Returns a boolean indicating whether the pid file
+removal succeeded.
 
 #### pid.removeOnExit()
 
